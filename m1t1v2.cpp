@@ -8,7 +8,7 @@ OUTPUT: return 0 (no error)
 SPECIAL FX: Greet the user
 m1t1v2*/
 
-//magic words to start -- feed the Magic Wish Machine!
+//magic words to start -- feed the Magic Wish Machine! (This is the only way I will refer to a computer from now on)
 
 #include <iostream>
 using namespace std;
