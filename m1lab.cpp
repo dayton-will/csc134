@@ -11,6 +11,7 @@ number of months for maintenance service, price per month, and the price to prep
 //magic words to start -- feed the Magic Wish Machine!
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 int main()  {
     //Start program.
@@ -34,7 +35,7 @@ cout << "$100.75 per month if you prepay six months in advance." << endl;
 //calculate total price of prepay
 double totalPrice = months * pricePerMonth;
 
-cout << "Booking six months in advance will cost " << totalPrice << endl;
+cout << "Booking six months in advance will cost $" << fixed << setprecision(2) << totalPrice << endl;
 
 
 
