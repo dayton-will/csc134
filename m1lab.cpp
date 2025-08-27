@@ -18,18 +18,25 @@ int main()  {
 //The owner's name
 string name = "ATD";
 //Number of months for maintenance package
-int months = 12;
+int months = 6;
+
 //Price per month
-double pricePerMonth = 100.50;
+double pricePerMonth = 100.75;
 
-//calculate the total prepay price
-//TODO
 
-//Print all the information about the business
+//Greet customer
 
-cout << "Thanks for calling " << name;
-cout << " Mobile Detailing." <<endl;
-//comment
+cout << "Thank you for calling " << name;
+cout << " Mobile Detailing." << endl;
+cout << "We're currently offering a promotion on our monthly maintenance package; " << endl;
+cout << "$100.75 per month if you prepay six months in advance." << endl;
+
+//calculate total price of prepay
+double totalPrice = months * pricePerMonth;
+
+cout << "Booking six months in advance will cost " << totalPrice << endl;
+
+
 
 
 
