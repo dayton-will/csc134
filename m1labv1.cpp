@@ -16,11 +16,11 @@ int main()  {
     //Start program.
 //This program will serve as a prototype for pricing prepay for my mobile automotive detailing business.
 //The owner's name
-string name = "ATD";
+string name = "Dayton"
 //Number of months for maintenance package
-int months = 12;
+int months = 12
 //Price per month
-double pricePerMonth = 100.50;
+double pricePerMonth = $100
 
 //calculate the total prepay price
 //TODO
@@ -28,7 +28,7 @@ double pricePerMonth = 100.50;
 //Print all the information about the business
 
 cout << "Thanks for calling " << name;
-cout << " Mobile Detailing." <<endl;
+cout << "s mobile detailing." <<endl;
 //comment
 
 
