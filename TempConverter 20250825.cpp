@@ -11,6 +11,8 @@ Formula: °C = (°F - 32) ÷ (9/5)
 using namespace std;
 
 int main() {
+    std::cout << "Enter a temperature in Fahrenheit";
+    std::cin >> fahrenheit;
 
     
 }
