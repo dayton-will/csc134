@@ -29,6 +29,7 @@ double pricePerMonth = $100
 
 cout << "Thanks for calling " << name;
 cout << "s mobile detailing." <<endl;
+//comment
 
 
 
