@@ -23,16 +23,19 @@ int main() {
 
     // Greet customer
     cout << "Hello! Welcome to our " << item << " shop.";
+
     // Ask for information
     std::cout << " Each " << item << " costs $" << std::fixed << std::setprecision(2) << cost_per << std::endl;
+
     cout << "We have " << amount << " " << items << " available." << endl;
     cout << "How many " << items << " do you need?" << endl;
+
     // cin: user input into variable
     cin >> amount_purchased;
     // Process information
     total_cost = amount_purchased * cost_per;
-    // Output the answer
-    //cout << "Your total cost is: $" << total_cost << endl;
+
+    // Output answer
     std::cout << "Your total cost is: $" << std::fixed << std::setprecision(2) << total_cost << std::endl;
     cout << "Our techs will have those installed within an hour. We accept cash or all major credit cards; no personal checks." << endl;
     cout << "Thank you for your business. Have a great day!" << endl;
