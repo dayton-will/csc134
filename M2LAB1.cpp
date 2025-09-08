@@ -4,7 +4,7 @@ M2 Lab 1 - Case Study with Crates
 dayton-will
 9/8/2025
 
-volume =lengthxwidthxheight
+volume =length x width x height
 cost= volume x 0.23
 charge= volume x 0.5
 profit = charge-cost
@@ -18,7 +18,7 @@ using namespace std;
 int main()  {
 //Set up the variables.
     double length, width, height; // size of crate
-    double volume; //length * width * height;
+    double volume; //length * width * height
     double cost_to_make, charge_to_customer;
     double profit;
 
@@ -27,7 +27,7 @@ int main()  {
 
 //Ask the user to input crate info.
 
-cout << "Welcome to ATD Shipping, LLC. We look forward to working with you!" << endl;
+cout << "ATD Shipping Crate Calculator. This application will provide our cost, price, and profit when building a shipping crate for one of our partners." << endl;
 cout << "Crate length:" << endl;
 cin >> length;
 cout << "Crate Width: ";
@@ -51,8 +51,5 @@ cout << "Profit        : $" << profit << endl;
 
 
 return 0; // no errors
-
-
-
 
 }
