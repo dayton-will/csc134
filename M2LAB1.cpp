@@ -23,8 +23,8 @@ int main()  {
     double cost_to_make, charge_to_customer;
     double profit;
 
-    const double cost_per_cubic_foot = 0.23; //relates to cost
-    const double charge_per_cubic_foot = 0.5; // relates to charge
+    const double COST_PER_CUBIC_FOOT = 0.23; //relates to cost
+    const double CHARGE_PER_CUBIC_FOOT = 0.5; // relates to charge
 
 //Ask the user to input crate info.
 
@@ -39,8 +39,8 @@ cin >> height;
 
 //Calculate cost and prices.
 volume = length * width * height;
-cost_to_make = volume * cost_per_cubic_foot;
-charge_to_customer = volume * charge_per_cubic_foot;
+cost_to_make = volume * COST_PER_CUBIC_FOOT;
+charge_to_customer = volume * CHARGE_PER_CUBIC_FOOT;
 profit = charge_to_customer - cost_to_make;
 
 //Display results.
