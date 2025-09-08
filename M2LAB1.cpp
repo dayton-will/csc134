@@ -12,6 +12,7 @@ profit = charge-cost
 
 */
 
+//magic words to start -- feed the Magic Wish Machine!
 #include <iostream>
 using namespace std;
 
