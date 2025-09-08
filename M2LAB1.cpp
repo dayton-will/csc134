@@ -29,11 +29,11 @@ int main()  {
 //Ask the user to input crate info.
 
 cout << "ATD Shipping Crate Calculator. This application will provide our cost, price, and profit when building a shipping crate for one of our partners." << endl;
-cout << "Crate length:" << endl;
+cout << "Crate length (feet):" << endl;
 cin >> length;
-cout << "Crate Width: ";
+cout << "Crate Width (feet): ";
 cin >> width;
-cout << "Crate Height: ";
+cout << "Crate Height (feet): ";
 cin >> height;
 
 
