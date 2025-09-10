@@ -1,0 +1,90 @@
+"""
+CSC 134
+M2LAB2
+dayton-will
+9/10/2025
+Purpose: Make some interesting shapes
+""" 
+
+
+
+import turtle             # Allows us to use turtles
+wn = turtle.Screen()      # Creates a playground for turtles
+turbo = turtle.Turtle()    # Create a turtle, assign to turbo
+turtle.bgcolor('black')
+
+
+#Blue Square
+turbo.pencolor('blue')
+for _ in range(4):
+    turbo.forward(50) # Tell Turbo to move forward by 50 units
+    turbo.left(90)    # Tell Turbo to turn by 90 degreesMove the turtle to the starting point for the circle
+
+#Red Circle
+turbo.penup()
+turbo.goto(-12, 25)  # Move to left side of square to draw circle.
+turbo.setheading(270)  # Face downwards
+turbo.pendown()
+turbo.pencolor('red')
+turbo.circle(36)
+
+#Green Triangle
+turbo.pencolor('green')
+turbo.penup()
+turbo.goto(0, 0)
+turbo.pendown()
+turbo.setheading(45)
+turbo.goto(25,50)
+turbo.goto(50, 2)
+turbo.goto(0, 2)
+
+#Upside Down Green Triangle
+turbo.penup()
+turbo.goto(1, 49)
+turbo.pendown()
+turbo.goto(25, 2)
+turbo.goto(50, 49)
+turbo.goto(1, 49)
+
+#Initials
+turbo.penup()
+turbo.goto(-10, -50)
+turbo.write("DGW", align="center", font=("Arial", 24, "bold"))
+
+#Airplane
+#cockpit
+turbo.goto(25, 300)
+turbo.pendown()
+turbo.pencolor('silver')
+turbo.goto(20, 280)
+turbo.goto(30, 280)
+turbo.goto(25,300)
+
+#Fuselage=
+turbo.penup()
+turbo.goto(25,280)
+turbo.pendown()
+turbo.width(9)
+turbo.goto(25,150)
+
+#Left Wing
+turbo.penup()
+turbo.goto(20,230)
+turbo.pendown()
+turbo.width(1)
+turbo.goto(-45,220)
+turbo.goto(20,220)
+
+#Right Wing
+turbo.goto(95,220)
+turbo.goto(30,230)
+
+#Tail
+turbo.penup()
+turbo.goto(10,150)
+turbo.width(9)
+turbo.pendown()
+turbo.goto(40,150)
+
+
+turtle.done()
