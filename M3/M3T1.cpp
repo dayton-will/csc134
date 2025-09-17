@@ -1,11 +1,20 @@
+/*
+M3T1 - Rectangle Calculation
+CSC 134
+dayton-will
+9/17/2025
+*/
 
+
+
+//magic words to start -- feed the Magic Wish Machine!
 
 #include <iostream>
 using namespace std;
 
 int main() {
 
-// Get infor on the two rectangles
+// Get information on the two rectangles
 double length1, length2, width1, width2;
 double area1, area2;
 cout << "Enter the length and width of two rectangles." << endl;
@@ -16,7 +25,7 @@ cout << "Width: ";
 cin >> width1;
 cout << endl;
 cout << "Second rectangle." << endl;
-cout << "Lenth: ";
+cout << "Length: ";
 cin >> length2;
 cout << "Width: ";
 cin >> width2;
