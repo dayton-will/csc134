@@ -26,8 +26,8 @@ int release = 2015;
 double boxOffice = 2.3;
 
 cout << "The epic climbing documentary " << name;
-cout << " , released in " << release;
+cout << ", released in " << release;
 cout << ", grossed $" << boxOffice << " million in the US and Canada. ";
-cout << 
+
 }
 
