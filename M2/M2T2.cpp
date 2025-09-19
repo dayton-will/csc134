@@ -26,15 +26,15 @@ int main()  {
     // Calculate the values
     cout << "Order up" << endl;
     cout << item << " (x1)" << endl;
-    cout << /*"\t"*/ << menu_price << endl;
+    cout << "\t$" << fixed << setprecision(2) << menu_price << endl;
 
     tax_amount = menu_price * tax_percent; // add sales tax
     total_price = menu_price + tax_amount;
 
 
     //Print the results
-    cout << "Tax: $" << tax_amount << endl;
-    cout << "Total: $" << total_price = menu_price + tax_amount << endl;
+    cout << "Tax:    $" << tax_amount << endl;
+    cout << "Total:  $" << fixed << setprecision(2) << total_price << endl;
 
 
 }
