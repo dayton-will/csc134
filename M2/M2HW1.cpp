@@ -11,16 +11,23 @@ Complete 2, 3, or 4 questions.
 
 #include <iostream>
 #include <iomanip> 
+#include <functional> /* Allows hash so the same account number is always tied to a given name.
+(I didn't control for variations, such as missed or different capitalization).
+*/
+
 using namespace std;
 
 //put other functions above main()
 
 void question1() {
     cout << "Question 1" << endl;
+    cout << setprecision(2) << fixed;  // magic words for 2 decimal places; requires "#include <iomanip>"
 }
 
 void question2() {
     cout << "Question 2" << endl;
+    cout << setprecision(2) << fixed;  // magic words for 2 decimal places; requires "#include <iomanip>"
+
 }
 
 void question3() {
@@ -40,6 +47,8 @@ int main() {
     double account_balance; // Current account balance
     double deposit_amount; // Amount customer is depositing
     double withdrawal_amount; // amount customer is withdrawing
+    double final_balance;
+
 
     do {
         cout << "===== MENU =====" << endl;
@@ -60,18 +69,41 @@ int main() {
 
 
 
-    //question1();
-
+    // Greet the customer, obtain name
     cout << "Welcome to Gringott's Wizarding Bank, est. 1474. May I please get the name on the account?" << endl;
-    cin >> name;
+    cin.ignore();
+    getline(cin, name);   // Allow full name w/ spaces
+    // Obtain account balance
     cout << "Thank you, " << name << ". What is your current account balance?" << endl;
     cin >> account_balance;
+    // Obtain deposit amount
     cout << "Thank you. How much would you like to deposit?" << endl;
     cin >> deposit_amount;
+    // Obtain withdrawal amount
     cout << "Thank you. And how much would you like to withdraw?" << endl;
     cin >> withdrawal_amount;
+    
+    //Obtain account number with hash
+    std::hash<std::string> hasher;
+    size_t raw_hash = hasher(name);
+    int account_number = raw_hash % 1000000;  // clamp to 6 digits
 
-    cout << setprecision(2) << fixed;  // magic words for 2 decimal places; requires "#include <iomanip>"
+    // Display pertinent information at end of transaction: similar to a receipt.
+    cout << "\n -- Transaction Summary --" << endl;
+    cout << "Name: " << name << endl;
+    cout << "Account #: " << account_number << endl;
+    final_balance = account_balance + deposit_amount - withdrawal_amount;
+    cout << "Final Balance: $" << final_balance << endl;
+    cout << "\n" << endl;
+    cout << "\n" << endl;
+
+
+
+
+
+
+
+    
 
 /*    
     question2();
