@@ -71,33 +71,55 @@ void question2() {
 
 //Ask the user to input crate info.
 
-cout << "General Crates Building Calculator. This application will provide our cost, price, and profit when building a shipping crate for one of our partners." << endl;
-cout << "Crate Length (feet):";
-cin >> length;
-cout << "Crate Width (feet):";
-cin >> width;
-cout << "Crate Height (feet):";
-cin >> height;
+    cout << "General Crates Building Calculator. This application will provide our cost, price, and profit when building a shipping crate for one of our partners." << endl;
+    cout << "Crate Length (feet):";
+    cin >> length;
+    cout << "Crate Width (feet) :";
+    cin >> width;
+    cout << "Crate Height (feet):";
+    cin >> height;
 
 
 //Calculate cost and prices.
-volume = length * width * height;
-cost_to_make = volume * COST_PER_CUBIC_FOOT;
-charge_to_customer = volume * CHARGE_PER_CUBIC_FOOT;
-profit = charge_to_customer - cost_to_make;
+    volume = length * width * height;
+    cost_to_make = volume * COST_PER_CUBIC_FOOT;
+    charge_to_customer = volume * CHARGE_PER_CUBIC_FOOT;
+    profit = charge_to_customer - cost_to_make;
 
 //Display results.
-cout << endl;
-cout << "Your crate is " << volume << " cubic feet." << endl;
-cout << "Customer Price: $" << charge_to_customer << endl;
-cout << "Cost to Build : $" << cost_to_make << endl;
-cout << "Profit        : $" << profit << endl;
-cout << "\n" << endl;
+    cout << endl;
+    cout << "Your crate is " << volume << " cubic feet." << endl;
+    cout << "Customer Price: $" << charge_to_customer << endl;
+    cout << "Cost to Build : $" << cost_to_make << endl;
+    cout << "Profit        : $" << profit << endl;
+    cout << "\n" << endl;
 
 }
 
 void question3() {
+    // 
+    int pizzas_ordered;
+    int party_people;
+    int slices_per_pizza;
+    int leftover_slices;
+
+
+
     cout << "Question 3" << endl;
+    cout << "Welcome to the Epic Pizza Party Planner!" << endl;
+    cout << "How many pizzas are you ordering? (numerical value only) ";
+    cin >> pizzas_ordered;
+    cout << "How many slices per pizza? "; 
+    cin >> slices_per_pizza;
+    cout << "How many people are you inviting? ";
+    cin >> party_people;
+
+    // Define leftover slices, assuming 3 slices per party attendee
+    leftover_slices = (pizzas_ordered * slices_per_pizza) - (party_people * 3);
+
+    cout << "With " << pizzas_ordered << " pizzas for " << party_people << " people, you should have " << leftover_slices << " slices remaining at the end of the party." << endl;
+    cout << "\n" << endl;
+
 }
 
 void question4() {
@@ -121,6 +143,8 @@ int main() {
         cout << "0 - Exit" << endl;
         cout << "Choose an option: ";
         cin >> choice;
+        cout << "\n" << endl;
+
 
         if (choice == "1") {
             question1();
@@ -142,20 +166,6 @@ int main() {
 
     } while (choice != "0");
 
-
-
-
-
-
-
-    
-
-/*    
-    question2();
-    question3();
-    question4();
-    
-*/
 return 0; // no errors
 
 }
