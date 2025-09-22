@@ -13,7 +13,8 @@ Beginning of the craps game
 using namespace std;
 
 //Helper functions (todo)
-//int roll();
+//seed RNG before roll
+//int roll ()
 
 //main
 int main() {
@@ -29,16 +30,15 @@ int main() {
     int roll1;
     int roll2;
     int point; // roll if it doesn't immediately win/lose
+    //Seed RNG bfore roll
+    srand(time(0));
 
-
-    // Blatantly cheat
-    cout << "enter two dice ( press ENTER between) ";
-    cin >> roll1;
-    cin >> roll2;
+    // Roll the dice
+    roll1 = roll();
+    roll2 = roll();
+    int sum = (roll1+roll2);
+    cout << "ROLL: " << sum << endl;
     
-    // Set sum
-    int sum = roll1+roll2;
-
 
     if ( (sum == 7) || (sum == 11) ) {
         cout << "Lucky Seven -- You win!" << endl;
@@ -46,8 +46,8 @@ int main() {
     }
 
     else if ( ( sum ==2) || (sum == 3) || (sum == 12) ) {
-        cout << "1, 2, 12 -- Sorry, you lose." << endl;
-
+        cout << "🎲 1,2,12 -- Sorry, you lose." << endl;
+                cout << "\n" << endl;
     }
 
     else {
@@ -66,9 +66,9 @@ return 0;
 
 //DEFINE Helper Functions
 int roll; {
-    // rolls a six sided die
-    //TODO
-    return 7;
+    int my_roll;
+    my_roll = (rand() % 6 ) + 1; // 1-6
+    return my_roll;
 }
 
 
