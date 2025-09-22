@@ -97,7 +97,7 @@ void question2() {
 }
 
 void question3() {
-    // 
+    // Define integers
     int pizzas_ordered;
     int party_people;
     int slices_per_pizza;
@@ -123,7 +123,18 @@ void question3() {
 }
 
 void question4() {
+    //define strings
+    string school = "Let's go FTCC";
+    string team = "Let's go Trojans";
     cout << "Question 4" << endl;
+
+
+    cout << school << endl;
+    cout << school << endl;
+    cout << school << endl;
+    cout << team << endl;
+    cout << "\n" << endl;
+
 }
 
 int main() {
