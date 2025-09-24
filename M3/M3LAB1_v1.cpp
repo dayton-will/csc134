@@ -9,13 +9,15 @@ dayton-will
 using namespace std;
 
 //================FUNCTION PROTOTYPES================//
-//Declare all your locations here
+// Declare all your locations here
 void home();       // Starting location
 void gym();        // Garage gym!
-void kitchen();    // Where the food lives.
+void kitchen();    // Where the food lives
 void homeOffice(); // Where I answer the phone
 
-//Declare all my customers here
+// Declare business activities here
+
+// Declare all my customers here
 void Hannah();   // Single mom, messy car. Ford Taurus.
 void Warren();   // Local entrepreneur. Runs a small gym. F250 pickup truck. Has kids and dogs.
 void Lauren();   // Nurse with a "side hustle" as a certified masseuse. Doesn't have kids of her own, but spends a lot of time with nieces/nephews.
@@ -71,5 +73,33 @@ void home()
 void homeOffice()
 {
     // TODO Build Home Office Function
-    cout << "Your workout complete, you grab a cup of coffee and head to your desk." << endl;
+    cout << "\nYour workout complete, you grab a cup of coffee and head to your desk." << endl;
+    cout << "What do you do next?" << endl;
+    cout << "1 = Plan your day, 2 = Call leads, 3 = Check Email, 4 = Check Instagram." << endl;
+    int choice;
+    cin >> choice;
+    
+    if (choice == 1)
+    {
+        cout << "\nExcellent choice. Research indicates that planning your day helps you work with your brain's natural patterns" << endl;
+        cout << "and get organized." << endl;
+        cout << endl;
+    }
+
+    else if (choice == 2)
+    {
+        //Build 2 = Call leads
+    }
+
+        else if (choice == 3)
+    {
+        //Build 3 = Call leads
+    }
+
+        else if (choice == 4)
+    {
+        //Build 4 = Check social media (YOU FAIL AND DIEEEEEE!)
+    }
+
+
 }
