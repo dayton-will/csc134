@@ -9,23 +9,21 @@ dayton-will
 using namespace std;
 
 //================FUNCTION PROTOTYPES================//
-//Declare all y locations here
-void home(); // Starting location
-void gym(); // Garage gym!
-void kitchen(); // Where the food lives.
+//Declare all your locations here
+void home();       // Starting location
+void gym();        // Garage gym!
+void kitchen();    // Where the food lives.
 void homeOffice(); // Where I answer the phone
 
-
-
 //Declare all my customers here
-void Hannah(); // Single mom, messy car. Ford Taurus.
-void Warren(); // Local entrepreneur. Runs a small gym. F250 pickup truck. Has kids and dogs.
-void Lauren(); // Nurse with a "side hustle" as a certified masseuse. Doesn't have kids of her own, but spends a lot of time with nieces/nephews.
-void Jonny(); // Description
+void Hannah();   // Single mom, messy car. Ford Taurus.
+void Warren();   // Local entrepreneur. Runs a small gym. F250 pickup truck. Has kids and dogs.
+void Lauren();   // Nurse with a "side hustle" as a certified masseuse. Doesn't have kids of her own, but spends a lot of time with nieces/nephews.
+void Jonny();   // Description
 void Lucille(); // Description
 
 void gameOver(); // An ending
-void victory(); // Another ending
+void victory();  // Another ending
 
 //==========MAIN FUNCTION==========//
 int main()
@@ -35,28 +33,43 @@ int main()
     cout << "=========================================" << endl;
     cout << endl;
 
-    //home();   //Start the adventure!
+    home();   // Start the adventure!
 
- cout << "\nYou wake up, rubbing the sleep from your eyes, an obnoxious dog whining in your face."<< endl;
- cout << "You know how you should start your day. Do you slam your preworkout and get a workout in, or head to the kitchen for coffee?"<< endl;
- cout << "(1 = Preworkout, 2 = Coffee):";
-
- int choice;
- cin >> choice;
- if (choice == 1)
-{
-    cout << "\nExcellent choice! You feel your ears burning from the preworkout, you hit a deadlift PR, and your shins are bleeding" <<endl;
-    cout << "from the barbell scraping them. Great workout, and you're ready to crush the day." << endl;
-    cout << endl;
+    return 0;
 }
 
-if (choice == 2)
+//==========FUNCTION DEFINITIONS==========//
+
+void home()
 {
-    cout << "\nReally, you thought you should skip your workout today? Nice try. You slam your pre and head to the gym." << endl;
-    cout << "You feel your ears burning from the preworkout, you hit a deadlift PR, and your shins are bleeding" <<endl;
-    cout << "from the barbell scraping them. Great workout, and you're ready to crush the day." << endl;
+    cout << "\nYou wake up, rubbing the sleep from your eyes, an obnoxious dog whining in your face." << endl;
+    cout << "You know how you should start your day. Do you slam your preworkout and get a workout in, or head to the kitchen for coffee?" << endl;
+    cout << "(1 = Preworkout, 2 = Coffee): ";
+
+    int choice;
+    cin >> choice;
+
+    if (choice == 1)
+    {
+        cout << "\nExcellent choice! You feel your ears burning from the preworkout, you hit a deadlift PR, and your shins are bleeding" << endl;
+        cout << "from the barbell scraping them. Great workout, and you're ready to crush the day." << endl;
+        cout << endl;
+    }
+    else
+    {
+        cout << "\nReally, you thought you should skip your workout today? Nice try. You slam your pre and head to the gym." << endl;
+        cout << "You feel your ears burning from the preworkout, you hit a deadlift PR, and your shins are bleeding" << endl;
+        cout << "from the barbell scraping them. Great workout, and you're ready to crush the day." << endl;
+        cout << endl;
+    }
+
     cout << endl;
+
+    homeOffice(); // Go to Home Office Function
 }
 
- return 0;
+void homeOffice()
+{
+    // TODO Build Home Office Function
+    cout << "Your workout complete, you grab a cup of coffee and head to your desk." << endl;
 }
