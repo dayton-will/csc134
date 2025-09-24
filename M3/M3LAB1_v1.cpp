@@ -35,11 +35,11 @@ int main()
     cout << "=========================================" << endl;
     cout << endl;
 
- home();   //Start the adventure!
+    //home();   //Start the adventure!
 
  cout << "\nYou wake up, rubbing the sleep from your eyes, an obnoxious dog whining in your face."<< endl;
  cout << "You know how you should start your day. Do you slam your preworkout and get a workout in, or head to the kitchen for coffee?"<< endl;
- cout << "(1 = Preworkout, 2 = Coffeee):";
+ cout << "(1 = Preworkout, 2 = Coffee):";
 
  int choice;
  cin >> choice;
@@ -47,6 +47,15 @@ int main()
 {
     cout << "\nExcellent choice! You feel your ears burning from the preworkout, you hit a deadlift PR, and your shins are bleeding" <<endl;
     cout << "from the barbell scraping them. Great workout, and you're ready to crush the day." << endl;
+    cout << endl;
+}
+
+if (choice == 2)
+{
+    cout << "\nReally, you thought you should skip your workout today? Nice try. You slam your pre and head to the gym." << endl;
+    cout << "You feel your ears burning from the preworkout, you hit a deadlift PR, and your shins are bleeding" <<endl;
+    cout << "from the barbell scraping them. Great workout, and you're ready to crush the day." << endl;
+    cout << endl;
 }
 
  return 0;
