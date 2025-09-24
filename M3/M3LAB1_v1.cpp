@@ -89,11 +89,15 @@ void homeOffice()
     else if (choice == 2)
     {
         //Build 2 = Call leads
+        cout << "You check your list of leads, and call the first three." << endl;
+        cout << "This was a good choice. Leads = customers = money!" << endl;
+        cout << endl;
     }
 
         else if (choice == 3)
     {
-        //Build 3 = Call leads
+        cout << "You open up your gmail, and have three new messages." << endl;
+        cout << endl;
     }
 
         else if (choice == 4)
