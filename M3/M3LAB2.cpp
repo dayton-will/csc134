@@ -8,7 +8,10 @@ dayton-will
 // words to start -- feed the Magic Wish Machine!
 
 #include <iostream>
+#include <cstdlib>  // for rand, srand
+#include <ctime>    // for time
 using namespace std;
+
 
 // Write the code in a function
 void letter_grader();
@@ -113,5 +116,12 @@ if (again == "y") {
 }
 cout << endl;
 
+int roll();
+ {
+    const int sides = 20;
+    int my_roll;
+    my_roll = (rand() % sides) + 1;
+    return my_roll;
 }
+
 
