@@ -16,8 +16,8 @@ void combat();
 
 int main() {
    
-    letter_grader();
-    // combat();
+    //letter_grader();
+     combat();
      return 0;
 
 
@@ -25,6 +25,7 @@ int main() {
 
 //define other functions here
 
+/*
 void letter_grader() {
     // Input a number grade.
     // Respond with a letter grade.
@@ -40,6 +41,15 @@ void letter_grader() {
     cin >> num_grade;
 
     // Create the "if" statements.
+    /* 
+    90 - 100 A
+    80 - 89 B
+    70 - 79 C
+    60 - 69 D
+    < 60 F
+    */
+
+/*
     if (num_grade >= A_GRADE ) {
         letter_grade = "A";
     }
@@ -67,11 +77,41 @@ void letter_grader() {
     cout << endl << endl;
 
 }
-
-/* 
-90 - 100 A
-80 - 89 B
-70 - 79 C
-60 - 69 D
-< 60 F
 */
+
+
+void combat() {
+    /*
+    A simple D&D style combat demo
+    Attack roll + bonus >= armor class? Then hit, else miss.
+    */
+    // Variables.
+    int attack_roll, attack_bonus, enemy_armor;
+    cout << "You are fighting a goblin." << endl;
+    cout << "Enter your roll: ";
+    cin >> attack_roll;
+    cout << "Enter attack bonus ";
+    cin >> attack_bonus;
+    cout << "Enemy armor class ";
+    cin >> enemy_armor;
+
+    // Roll to hit.
+    if (attack_roll + attack_bonus >= enemy_armor) {
+        cout << "Hit!" << endl;
+    }
+
+else { 
+    cout << "Miss!" << endl;
+}
+// Try again?
+cout << "Again? (y/n): ";
+string again;
+cin >> again;
+if (again == "y") {
+    // Just call the function again!
+    combat();
+}
+cout << endl;
+
+}
+
