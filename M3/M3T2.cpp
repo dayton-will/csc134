@@ -20,7 +20,7 @@ using namespace std;
 int main() {
     // int num = roll();
     // cout << num << endl;
-    //MAIN CRAPS CYCLR
+    //MAIN CRAPS CYCLE
     // For now:
     /*
     - roll 26 (2-12)
