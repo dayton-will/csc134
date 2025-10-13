@@ -1,0 +1,355 @@
+:: StoryTitle
+Monday Apocalypse
+
+
+:: StoryData
+{
+  "ifid": "45F3841A-2D03-40EA-95A4-98793D12364D",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "zoom": 1
+}
+
+
+:: AwardXP {"position":"275,25","size":"100,100"}
+(set: $xp to $xp + $gain)
+(while: $xp >= $xpToNext)[
+  (set: $xp to $xp - $xpToNext)
+  (set: $level to $level + 1)
+  (set: $xpToNext to $xpBase + ($xpStep * ($level - 1)))
+  You leveled up to Level $level![
+  ]<levelup|
+]
+
+
+:: ChooseSupplyStop {"position":"400,150","size":"100,100"}
+With rumors swirling, you decide a quick supply stop wouldn’t hurt.
+
+Where do you swing by?
+
+* [[Hardware Store — duct tape, utility knife, bungee cords->SupplyStop1]]
+* [[Grocery Store — water, beans, and "emergency donuts"->SupplyStop2]]
+* [[Detail Supply Warehouse — extra microfibers, APC, clay bars->SupplyStop3]]
+
+
+:: ChooseTransport {"position":"1025,25","size":"100,100"}
+Commute time! Your options:
+
+* [[Tacoma — reliable, holds gear, smells faintly of tire shine->Transport1]]
+* [[Motorcycle — fast, fun, backpack with just the essentials->Transport2]]
+* [[Run there — you’re training for a 50k race anyway, right?->Transport3]]
+
+
+:: DetailChoice1 {"position":"275,275","size":"100,100"}
+(if: $transport is 2)[
+Inverter fits under your seat. Moto win! Tiny power = big utility later.
+]
+(else:)[
+Inverter rides in the Tacoma. You feel grid-adjacent and smug.
+]
+(set: $gain to 10)(display: "AwardXP")
+
+[[Next->OutbreakIntro]]
+
+
+:: DetailChoice2 {"position":"400,275","size":"100,100"}
+You crack the drum: turns out it’s premium tire shine concentrate. Zombies are mesmerized by the gloss.
+
+(if: $supplies >= 2)[
+You mix a perfect ratio. Beading so crisp it’s basically social distancing.
+(set: $gain to 15)(display: "AwardXP")
+]
+(else:)[
+(set: $gain to 10)(display: "AwardXP")
+]
+
+[[Next->OutbreakIntro]]
+
+
+:: End {"position":"775,275","size":"100,100"}
+Thanks for playing — may your foam cannon always sing.
+
+
+:: FirstClient {"position":"275,150","size":"100,100"}
+You arrive at your first client: a soccer-van coated in the trifecta: goldfish, dog glitter ("fur"), and mystery stickiness.
+
+(if: $transport is 2)[
+Your motorcycle backpack held: one microfiber, one bottle of APC, and optimism.
+The van laughs in Cheerios.
+Client: "Can you also shampoo the headliner and fix my son’s slime sculpture?"
+You quote bravely, but this might take longer.
+(set: $job_ok to 0)
+(set: $gain to 10)(display: "AwardXP")
+]
+(else:)[
+You unload the full ATD kit like a magician pulling gear from a hat.
+Foam cannon sings. The van confesses its sins. You restore honor to the minivan clan.
+(set: $job_ok to 1)
+(set: $gain to 25)(display: "AwardXP")
+]
+
+[[Next->ChooseSupplyStop]]
+
+
+:: GroceryChoice1 {"position":"25,275","size":"100,100"}
+(if: $cleanliness is 1)[
+You look trustworthy and smell like mint. Cooperation achieved. Supplies secured.
+]
+(else:)[
+They hesitate… then you share water. Teamwork unlocked. Supplies secured.
+]
+(set: $gain to 12)(display: "AwardXP")
+
+[[Next->OutbreakIntro]]
+
+
+:: GroceryChoice2 {"position":"150,275","size":"100,100"}
+You shout "FREE DONUTS!" and the crowd migrates like geese. You ninja the shelf items.
+
+(if: $job_ok is 1)[
+A grateful parent hands you a coupon for non-expired beans.
+(set: $gain to 13)(display: "AwardXP")
+]
+(else:)[
+(set: $gain to 10)(display: "AwardXP")
+]
+
+[[Next->OutbreakIntro]]
+
+
+:: HardwareChoice1 {"position":"1025,150","size":"100,100"}
+(if: $supplies >= 2)[
+Professional-grade strapping! Door secured. Zombies ponder knots.
+(set: $gain to 15)(display: "AwardXP")
+]
+(else:)[
+It holds… mostly. One zombie squeezes through and gets stuck like a beached Roomba.
+(set: $gain to 8)(display: "AwardXP")
+]
+
+[[Next->OutbreakIntro]]
+
+
+:: HardwareChoice2 {"position":"1150,150","size":"100,100"}
+(if: $transport is 2)[
+Leaf blower lure works, but your helmet amplifies the noise. You flee stylishly.
+]
+(else:)[
+Lure succeeds. Bonus: the Tacoma bed vibrates like a subwoofer. Free car audio demo.
+]
+(set: $gain to 12)(display: "AwardXP")
+
+[[Next->OutbreakIntro]]
+
+
+:: MorningChoice1 {"position":"775,25","size":"100,100"}
+(set: $cleanliness to 1)
+Sparkling. Minty. Glorious. Customers will weep with joy.
+(set: $gain to 5)(display: "AwardXP")
+
+[[Next->ChooseTransport]]
+
+
+:: MorningChoice2 {"position":"900,25","size":"100,100"}
+(set: $cleanliness to 0)
+Bold choice. Your charisma will need to do some heavy lifting today.
+(set: $gain to 2)(display: "AwardXP")
+
+[[Next->ChooseTransport]]
+
+
+:: MorningRoutine {"position":"650,25","size":"100,100"}
+You wake up to your alarm labeled: "BE A RESPONSIBLE ADULT".
+
+Do you:
+
+* [[Shower like a professional human->MorningChoice1]]
+* [[Blast some deodorant and call it 'Speed Shower™'->MorningChoice2]]
+
+
+:: OutbreakIntro {"position":"525,275","size":"100,100"}
+As you’re finishing up, you notice three things:
+* Your phone pings with a news alert: "PLEASE DO NOT PANIC but also maybe panic".
+* A man across the street is chasing a mailman while trying to bite envelopes.
+* The dog you just de-furred says "braaaiiins" (probably).
+
+(if: $cleanliness is 1)[
+Good news: you smell fantastic. If zombies hunt by scent, they’ll pick the Speed-Shower guy.
+]
+(else:)[
+You smell intriguing. Zombies are foodies now.
+]
+
+(if: $transport is 3)[
+You consider running away. You are already running, technically.
+]
+
+(if: $job_ok is 1)[
+The client, grateful, offers you a tip… in canned beans. "These might be currency soon."
+]
+(else:)[
+The client asks if the apocalypse includes a discount. You pretend the foam cannon is a fire hose and leave.
+]
+
+(if: $supplies >= 2)[
+Thanks to your supply stop, you jury-rig a quick door barricade / hose-lasso.
+]
+(else-if: $supplies is 1)[
+Your supplies aren’t glamorous, but they help. You hand a donut to a non-zombie. Morale +1.
+]
+(else:)[
+You have… water. Which is good. Hydration is important when fleeing politely.
+]
+
+A lone zombie shuffles toward the freshly detailed van, admiring the beading.
+
+To be continued…
+
+[[Play again?->PlayAgain]]
+
+
+:: PlayAgain {"position":"650,275","size":"100,100"}
+Play again?
+
+* [[Yes->ResetStats]]
+* [[No->End]]
+
+
+:: PostSupplyBranch {"position":"900,150","size":"100,100"}
+(if: $stop is 1)[
+[Hardware Lot] A slow-moving cluster of biters shuffles near the exit.
+Use your haul to:
+
+* [[Bungee-barricade the door (quiet, controlled)->HardwareChoice1]]
+* [[Duct-tape a leaf blower to make a "noise lure" (loud, risky)->HardwareChoice2]]
+]
+(else-if: $stop is 2)[
+[Grocery Aisle] People duel with shopping carts. You spot supplies on a high shelf.
+What’s the move?
+
+* [[Help folks form a ladder (teamwork)->GroceryChoice1]]
+* [[Distract the crowd with free donuts, then snag the goods (tactical glaze)->GroceryChoice2]]
+]
+(else-if: $stop is 3)[
+[Detail Warehouse] Another detailer waves: "Trade?" He offers options.
+
+* [[Your clay bars for his compact inverter (power tiny tools)->DetailChoice1]]
+* [[Your APC for his mystery 5-gal drum labeled "???" (bold)->DetailChoice2]]
+]
+(else:)[
+[Parking Lot] You contemplate life, sip water, and rehearse your heroic stare.
+
+[[Next->OutbreakIntro]]
+]
+
+
+:: ResetStats {"position":"400,25","size":"100,100"}
+(set: $level to 1)
+(set: $xp to 0)
+(set: $xpBase to 100)
+(set: $xpStep to 50)
+(set: $xpToNext to $xpBase)
+
+[[Begin->Start]]
+
+
+:: Start {"position":"525,25","size":"100,100"}
+=== ATD MOBILE DETAIL: MONDAY APOCALYPSE (v0.5) ===
+You are a professional automotive detailer.
+
+Route: morning → first job → supply stop (+ mini-branch) → hmm, zombies?
+
+[[Begin Morning Routine->MorningRoutine]]
+
+
+:: Startup {"position":"25,25","size":"100,100"}
+(set: $level to 1)
+(set: $xp to 0)
+(set: $xpBase to 100)        /* XP needed for level 1→2 */
+(set: $xpStep to 50)         /* Each level needs +$xpStep more than the last */
+(set: $xpToNext to $xpBase)  /* Current threshold */
+
+
+:: StoryHeader {"position":"150,25","size":"100,100"}
+Level: $level • XP: $xp / $xpToNext
+
+
+:: SupplyStop1 {"position":"525,150","size":"100,100"}
+(set: $stop to 1)
+Hardware Store smells like destiny. You grab duct tape and bungees.
+
+(if: $transport is 2)[
+Bungees tame the backpack bulge. 10/10 would strap again.
+(set: $supplies to 2)
+]
+(else:)[
+Useful stuff, but the Tacoma already has a small hardware aisle.
+(set: $supplies to 1)
+]
+
+(set: $gain to 5)(display: "AwardXP")
+You load up and check the news again. People are really into biting.
+
+[[Next->PostSupplyBranch]]
+
+
+:: SupplyStop2 {"position":"650,150","size":"100,100"}
+(set: $stop to 2)
+Grocery Store: You acquire water, beans, and a box of maple-glazed morale.
+
+(if: $cleanliness is 0)[
+You share a donut with the cashier to distract from your 'Speed Shower™'.
+]
+(else:)[
+You are clean, caffeinated, and now slightly sticky with glaze.
+]
+
+(set: $supplies to 1)
+(set: $gain to 5)(display: "AwardXP")
+
+You load up and check the news again. People are really into biting.
+
+[[Next->PostSupplyBranch]]
+
+
+:: SupplyStop3 {"position":"775,150","size":"100,100"}
+(set: $stop to 3)
+Detail Supply Warehouse: microfibers leap into your cart voluntarily.
+
+(if: $job_ok is 0)[
+Fresh towels = fresh start. You feel professionally reborn.
+(set: $supplies to 1)
+]
+(else:)[
+You stack-boost your already immaculate workflow. Foam cannon purrs.
+(set: $supplies to 2)
+]
+
+(set: $gain to 8)(display: "AwardXP")
+You load up and check the news again. People are really into biting.
+
+[[Next->PostSupplyBranch]]
+
+
+:: Transport1 {"position":"1150,25","size":"100,100"}
+(set: $transport to 1)
+You load the ATD kit into the Tacoma like a pro. Seatbelt click.
+(set: $gain to 5)(display: "AwardXP")
+
+[[Next->FirstClient]]
+
+
+:: Transport2 {"position":"25,150","size":"100,100"}
+(set: $transport to 2)
+Helmet on. Vroom. You look very aerodynamic and slightly late.
+(set: $gain to 3)(display: "AwardXP")
+
+[[Next->FirstClient]]
+
+
+:: Transport3 {"position":"150,150","size":"100,100"}
+(set: $transport to 3)
+You begin running with a bucket, a hose, and a dream. Neighbors film.
+(set: $gain to 4)(display: "AwardXP")
+
+[[Next->FirstClient]]
