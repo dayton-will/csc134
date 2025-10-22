@@ -10,12 +10,13 @@ Print Multiplication Table ("Times Table")
 
 #include <iostream>
 #include <iomanip> 
-#include <string>
+usint namespace std;
 
+/*
 int main() {
     int input;
 
-    std::cout << "Please type the number 5 to print the 5 times table: ";
+    std::cout << "Please type the number 5 to print the ""5 times"" table: ";
     std::cin >> input;
 
     if (input == 5) {
@@ -29,4 +30,15 @@ int main() {
     }
 
     return 0;
+}
+*/
+
+void printAnswer(int answer) {
+    cout << "Answer is " << answer << endl;
+    answer = 42;
+
+    int main() {
+        int 
+    }
+
 }
