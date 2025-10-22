@@ -10,7 +10,7 @@ Print Multiplication Table ("Times Table")
 
 #include <iostream>
 #include <iomanip> 
-usint namespace std;
+using namespace std;
 
 /*
 int main() {
