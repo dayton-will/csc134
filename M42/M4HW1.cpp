@@ -32,7 +32,7 @@ int main() {
     return 0;
 }
 */
-
+/*
 void printAnswer(int answer) {
     cout << "Answer is " << answer << endl;
     answer = 42;
@@ -42,3 +42,4 @@ void printAnswer(int answer) {
     }
 
 }
+*/
