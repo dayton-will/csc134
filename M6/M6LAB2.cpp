@@ -20,11 +20,15 @@ const string DIRECTION_NAMES[NUM_DIRECTIONS] = {
 
 // Define constants for rooms
 enum Room {
-    ENTRANCE_HALL = 0,
-    LIBRARY = 1,
-    KITCHEN = 2,
-    GARDEN = 3,
-    BASEMENT = 4,
+    LOOKOUT = 0,
+    SHRINE = 1,
+    LONGHOUSE = 2,
+    TRAINING_YARD = 3,
+    FOREST_EDGE = 4,
+    SMITHY = 5,
+    CARPENTERS_SHOP = 6,
+    DRYING_RACKS = 7,
+    DOCKS = 8,
     NUM_ROOMS = 5
 };
 
