@@ -31,11 +31,15 @@ enum Room {
 int main() {
     // Room names array
     string roomNames[NUM_ROOMS] = {
-        "Entrance Hall",
-        "Library",
-        "Kitchen",
-        "Garden",
-        "Basement"
+        "Cliff Lookout",
+        "Shrine",
+        "Chieftain's Longhouse",
+        "Training Yard",
+        "Forest Edge"
+        "Smithy"
+        "Carpenter's Shop"
+        "Drying Racks"
+        "Docks"
     };
     
     // Room descriptions array
@@ -46,11 +50,15 @@ int main() {
     Rooms: 
     */
     string roomDescriptions[NUM_ROOMS] = {
-        "A grand entrance hall with a dusty chandelier hanging above.",
-        "Walls lined with ancient books. The air smells of old paper.",
-        "A spacious kitchen with an old stove and wooden counter.",
-        "An overgrown garden with stone pathways and a small fountain.",
-        "A dark, damp basement with cobwebs in the corners."
+        "A windswept, flat area at the highest point overlooking the entrance to the fjord. Below, you see the entrance to the shrine a few hundred meters away, and the village below.",
+        "A clearing in the woods, ringed with stones. Placed at the base of trees and hanging from branches are various offerings -- skulls, bones, wood carvings, and iron nails. It's a little eerie.",
+        "A longhouse where the village chieftain and his household live. Sod Roof.",
+        "An area where the chieftain and his warriors train for battle. At one edge are racks for hanging bows, shields, and axes. At the opposite edge is a row of straw archery targets and wooden axe throwing targets.",
+        "The edge of the pine forest. A narrow path winds through the trees; the air smells earthy -- moss, earth, and ancient pine trees."
+        "A low-roofed smithy with a glowing forge. The village blacksmith is swinging his hammer -- a loud and rhythmic 'clank.'"
+        "The local shipwright is carefully hewing planks that will fit together into a ship for raiding and trading next summer. The English will quake in their boots. (Always remember to pillage before you burn)."
+        "Rows of wooden racks laden with meat and fish hanging over a fire to smoke."
+        "A rough wooden dock stretching into the frigid sea. A longship bobs gently, its prow facing the open sea."
     };
     
     // Adjacency list using a 2D array
