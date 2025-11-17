@@ -77,35 +77,63 @@ int main() {
     }
     
     // Define the connections between rooms using the Room enum
-    // Entrance Hall connections
-    connections[ENTRANCE_HALL][NORTH] = LIBRARY;    // Entrance Hall -> North -> Library
-    connections[ENTRANCE_HALL][EAST] = KITCHEN;     // Entrance Hall -> East -> Kitchen
-    connections[ENTRANCE_HALL][SOUTH] = -1;         // No connection south
-    connections[ENTRANCE_HALL][WEST] = GARDEN;      // Entrance Hall -> West -> Garden
-    
-    // Library connections
-    connections[LIBRARY][NORTH] = -1;               // No connection north
-    connections[LIBRARY][EAST] = -1;                // No connection east
-    connections[LIBRARY][SOUTH] = ENTRANCE_HALL;    // Library -> South -> Entrance Hall
-    connections[LIBRARY][WEST] = -1;                // No connection west
-    
-    // Kitchen connections
-    connections[KITCHEN][NORTH] = -1;               // No connection north
-    connections[KITCHEN][EAST] = -1;                // No connection east
-    connections[KITCHEN][SOUTH] = BASEMENT;         // Kitchen -> South -> Basement
-    connections[KITCHEN][WEST] = ENTRANCE_HALL;     // Kitchen -> West -> Entrance Hall
-    
-    // Garden connections
-    connections[GARDEN][NORTH] = -1;                // No connection north
-    connections[GARDEN][EAST] = ENTRANCE_HALL;      // Garden -> East -> Entrance Hall
-    connections[GARDEN][SOUTH] = -1;                // No connection south
-    connections[GARDEN][WEST] = -1;                 // No connection west
-    
-    // Basement connections
-    connections[BASEMENT][NORTH] = KITCHEN;         // Basement -> North -> Kitchen
-    connections[BASEMENT][EAST] = -1;               // No connection east
-    connections[BASEMENT][SOUTH] = -1;              // No connection south
-    connections[BASEMENT][WEST] = -1;               // No connection west
+    /*Used ChatGPT 5.1 to assist with this. 
+    Prompt: "Build the connections between rooms. Be sure to provide clear comments. 
+    Use this style for the code and comments: (pasted professor's input)."
+    */
+   // Cliff Lookout connections
+connections[CLIFF_LOOKOUT][NORTH] = -1;            // No connection north
+connections[CLIFF_LOOKOUT][EAST]  = -1;            // No connection east
+connections[CLIFF_LOOKOUT][SOUTH] = SHRINE;        // Cliff Lookout -> South -> Shrine
+connections[CLIFF_LOOKOUT][WEST]  = -1;            // No connection west
+
+// Shrine connections
+connections[SHRINE][NORTH] = CLIFF_LOOKOUT;        // Shrine -> North -> Cliff Lookout
+connections[SHRINE][EAST]  = -1;                   // No connection east
+connections[SHRINE][SOUTH] = LONGHOUSE;            // Shrine -> South -> Chieftain's Longhouse
+connections[SHRINE][WEST]  = -1;                   // No connection west
+
+// Chieftain's Longhouse connections
+connections[LONGHOUSE][NORTH] = SHRINE;            // Longhouse -> North -> Shrine
+connections[LONGHOUSE][EAST]  = FOREST_EDGE;       // Longhouse -> East -> Forest Edge
+connections[LONGHOUSE][SOUTH] = SMITHY;            // Longhouse -> South -> Smithy
+connections[LONGHOUSE][WEST]  = TRAINING_YARD;     // Longhouse -> West -> Training Yard
+
+// Training Yard connections
+connections[TRAINING_YARD][NORTH] = -1;            // No connection north
+connections[TRAINING_YARD][EAST]  = LONGHOUSE;     // Training Yard -> East -> Longhouse
+connections[TRAINING_YARD][SOUTH] = SMITHY;        // Training Yard -> South -> Smithy
+connections[TRAINING_YARD][WEST]  = -1;            // No connection west
+
+// Forest Edge connections
+connections[FOREST_EDGE][NORTH] = -1;              // No connection north
+connections[FOREST_EDGE][EAST]  = -1;              // No connection east
+connections[FOREST_EDGE][SOUTH] = -1;              // No connection south
+connections[FOREST_EDGE][WEST]  = LONGHOUSE;       // Forest Edge -> West -> Longhouse
+
+// Smithy connections
+connections[SMITHY][NORTH] = LONGHOUSE;            // Smithy -> North -> Chieftain's Longhouse
+connections[SMITHY][EAST]  = CARPENTER_SHOP;       // Smithy -> East -> Carpenter's Shop
+connections[SMITHY][SOUTH] = DRYING_RACKS;         // Smithy -> South -> Drying Racks
+connections[SMITHY][WEST]  = TRAINING_YARD;        // Smithy -> West -> Training Yard
+
+// Carpenter's Shop connections
+connections[CARPENTER_SHOP][NORTH] = -1;           // No connection north
+connections[CARPENTER_SHOP][EAST]  = -1;           // No connection east
+connections[CARPENTER_SHOP][SOUTH] = -1;           // No connection south
+connections[CARPENTER_SHOP][WEST]  = SMITHY;       // Carpenter's Shop -> West -> Smithy
+
+// Drying Racks connections
+connections[DRYING_RACKS][NORTH] = SMITHY;         // Drying Racks -> North -> Smithy
+connections[DRYING_RACKS][EAST]  = -1;             // No connection east
+connections[DRYING_RACKS][SOUTH] = DOCKS;          // Drying Racks -> South -> Docks
+connections[DRYING_RACKS][WEST]  = -1;             // No connection west
+
+// Docks connections
+connections[DOCKS][NORTH] = DRYING_RACKS;          // Docks -> North -> Drying Racks
+connections[DOCKS][EAST]  = -1;                    // No connection east
+connections[DOCKS][SOUTH] = -1;                    // No connection south
+connections[DOCKS][WEST]  = -1;                    // No connection west
     
     // Game state
     int currentRoom = ENTRANCE_HALL; // Start in the Entrance Hall
